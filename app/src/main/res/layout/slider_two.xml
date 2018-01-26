@@ -4,11 +4,28 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:id="@+id/circle"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/dotted_circle"
+        >
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/circle_image"
+        />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="100dp"
+        android:layout_below="@id/circle"
         android:orientation="vertical">
 
         <TextView
@@ -31,6 +48,4 @@
             android:textSize="@dimen/slide_desc" />
 
     </LinearLayout>
-
-
 </RelativeLayout>

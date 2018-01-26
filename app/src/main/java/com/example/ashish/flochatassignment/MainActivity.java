@@ -1,11 +1,6 @@
 package com.example.ashish.flochatassignment;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
-
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,18 +14,20 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
-    private MyViewPagerAdapter myViewPagerAdapter;
     private LinearLayout dotsLayout;
-    private TextView[] dots;
     private int[] layouts;
-    private Button btnSkip, navigateToMain;
+    private Button navigateToMain;
+    private ImageView circleImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +37,9 @@ public class MainActivity extends AppCompatActivity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
         setContentView(R.layout.activity_main);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-        btnSkip = (Button) findViewById(R.id.btn_skip);
+        viewPager = findViewById(R.id.view_pager);
+        dotsLayout = findViewById(R.id.layoutDots);
         navigateToMain = findViewById(R.id.navigate_to_main);
-
 
         // layouts of all welcome sliders
         // add few more layouts if you want
@@ -52,22 +47,17 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.slider_one,
                 R.layout.slider_two,
                 R.layout.slider_three};
-
         // adding bottom dots
         addBottomDots(0);
-
         // making notification bar transparent
         changeStatusBarColor();
-
-        myViewPagerAdapter = new MyViewPagerAdapter();
+        MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-
-
     }
 
     private void addBottomDots(int currentPage) {
-        dots = new TextView[layouts.length];
+        TextView[] dots = new TextView[layouts.length];
 
         int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
         int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
@@ -144,6 +134,13 @@ public class MainActivity extends AppCompatActivity {
 
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
+            if (position == 1) {
+                circleImage = findViewById(R.id.circle_image);
+                Glide.with(MainActivity.this)
+                        .asGif()
+                        .load(R.raw.notes)
+                        .into(circleImage);
+            }
 
             return view;
         }
