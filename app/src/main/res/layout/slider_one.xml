@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/square"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:background="@drawable/dotted_border"
+        android:layout_marginTop="100dp">
+
+    <View
+        android:id="@+id/myRectangleView1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimary"/>
+    <View
+        android:id="@+id/myRectangleView2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorAccent"/>
+    <View
+        android:id="@+id/myRectangleView3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/bg_screen2"/>
+    <View
+        android:id="@+id/myRectangleView4"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:background="@color/bg_screen4"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="100dp"
+        android:layout_below="@id/square"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slide_1_title"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/slide_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="@dimen/desc_padding"
+            android:paddingRight="@dimen/desc_padding"
+            android:text="@string/slide_1_desc"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/slide_desc" />
+
+    </LinearLayout>
+</RelativeLayout>

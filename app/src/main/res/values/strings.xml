@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">FlochatAssignment</string>
+        <string name="title_activity_welcome">Home Screen</string>
+        <string name="next">NEXT</string>
+        <string name="skip">SKIP</string>
+        <string name="start">GOT IT</string>
+
+        <string name="slide_1_title">Comprehensive!</string>
+        <string name="slide_1_desc">We collect the best piece from around the web and combine them into history</string>
+
+        <string name="slide_2_title">Twice a day</string>
+        <string name="slide_2_desc">Top stories delieverd to you at 8am and 6pm</string>
+
+        <string name="slide_3_title">Definitive</string>
+        <string name="slide_3_desc">We surface the most important need to know use</string>
+    </resources>
