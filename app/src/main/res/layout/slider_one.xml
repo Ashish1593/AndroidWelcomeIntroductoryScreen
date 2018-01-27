@@ -11,8 +11,8 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_horizontal"
         android:padding="10dp"
-        android:background="@drawable/dotted_border"
-        android:layout_marginTop="100dp">
+        android:layout_above="@id/content"
+        android:background="@drawable/dotted_border">
 
     <View
         android:id="@+id/myRectangleView1"
@@ -40,14 +40,15 @@
     </LinearLayout>
 
 
+
     <LinearLayout
+        android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:layout_below="@id/square"
-        android:orientation="vertical">
-
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

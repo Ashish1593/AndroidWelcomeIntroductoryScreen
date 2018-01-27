@@ -1,32 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <FrameLayout
+        android:layout_above="@id/content"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:orientation="vertical"
         android:id="@+id/circle"
         android:gravity="center_horizontal|center_vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
         android:background="@drawable/dotted_circle"
         >
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:id="@+id/circle_image"
-        />
-    </LinearLayout>
+
+        <ImageView
+            android:id="@+id/sun"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:tint="@color/colorAccent"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/sun"
+            android:layout_gravity="top|left"
+            />
+        <ImageView
+            android:id="@+id/moon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/moon"
+            android:tint="@color/bg_screen3"
+            android:layout_gravity="bottom|right"
+            android:layout_marginBottom="35dp"
+            />
+
+    </FrameLayout>
+
+
 
     <LinearLayout
+        android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:layout_below="@id/circle"
-        android:orientation="vertical">
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,3 +70,11 @@
 
     </LinearLayout>
 </RelativeLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/circle_image"
+        android:layout_gravity="center_horizontal|center_vertical"
+        />
+</FrameLayout>

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
+        viewPager.setPageTransformer(false,new IntroPageTransformer());
     }
 
     private void addBottomDots(int currentPage) {
@@ -99,12 +101,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onPageScrolled(int arg0, float arg1, int arg2) {
-
         }
 
         @Override
         public void onPageScrollStateChanged(int arg0) {
-
         }
     };
 
@@ -129,18 +129,36 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
+        public Object instantiateItem(@NonNull ViewGroup container, int position) {
             layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
-            if (position == 1) {
-                circleImage = findViewById(R.id.circle_image);
+//            if (position == 1) {
+//                circleImage = findViewById(R.id.circle_image);
+//                Glide.with(MainActivity.this)
+//                        .asGif()
+//                        .load(R.raw.notes)
+//                        .into(circleImage);
+//            }
+
+            switch (position){
+                case 0:
+                    view.setTag(0);
+                    break;
+                case 1:
+                    view.setTag(1);
+                    circleImage = findViewById(R.id.circle_image);
                 Glide.with(MainActivity.this)
                         .asGif()
                         .load(R.raw.notes)
                         .into(circleImage);
+                    break;
+                case 2 :
+                    view.setTag(2);
+                    break;
             }
+
 
             return view;
         }
