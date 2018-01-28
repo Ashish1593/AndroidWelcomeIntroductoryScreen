@@ -2,11 +2,9 @@ package com.example.ashish.flochatassignment;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 
@@ -52,50 +50,57 @@ public class IntroPageTransformer implements ViewPager.PageTransformer {
             // callbacks to match up perfectly.
 
         } else {
+            if(pagePosition == 0){
+                ImageView image1 = page.findViewById(R.id.image1);
+                image1.setTranslationX(-pageWidthTimesPosition / 7f);
+                image1.setAlpha(1.0f - absPosition);
 
-            // The page is currently being scrolled / swiped. This is
-            // a good place to show animations that react to the user's
-            // swiping as it provides a good user experience.
+                ImageView image2 = page.findViewById(R.id.image2);
+                image2.setTranslationX(pageWidthTimesPosition / 6f);
+                image2.setAlpha(1.0f - absPosition);
 
-            // Let's start by animating the title.
-            // We want it to fade as it scrolls out
+                ImageView image3 = page.findViewById(R.id.image3);
+                image3.setTranslationX(-pageWidthTimesPosition / 2f);
+                image3.setAlpha(1.0f - absPosition);
+
+                ImageView image4 = page.findViewById(R.id.image4);
+                image4.setTranslationX(pageWidthTimesPosition / 1f);
+                image4.setAlpha(1.0f - absPosition);
+
+                ImageView image5 = page.findViewById(R.id.image5);
+                image5.setTranslationX(-pageWidthTimesPosition / 6f);
+                image5.setAlpha(1.0f - absPosition);
+
+                ImageView image6 = page.findViewById(R.id.image6);
+                image6.setTranslationX(pageWidthTimesPosition / 6f);
+                image6.setAlpha(1.0f - absPosition);
+
+                ImageView image7 = page.findViewById(R.id.image7);
+                image7.setTranslationX(-pageWidthTimesPosition / 4f);
+                image7.setAlpha(1.0f - absPosition);
+
+            }
 
             if(pagePosition == 1){
-
                 FrameLayout circleImage = page.findViewById(R.id.circle);
-//                RotateAnimation rotate = new RotateAnimation(0, 180, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//                rotate.setDuration(5000);
-//                rotate.setInterpolator(new LinearInterpolator());
-//
-//                circleImage.startAnimation(rotate);
-                circleImage.setRotation(-pageWidthTimesPosition / 2f);
+                circleImage.setRotation(-pageWidthTimesPosition / 7f);
      }
             if(pagePosition ==2) {
-                ImageView title = page.findViewById(R.id.circle1);
-                title.setTranslationX(-pageWidthTimesPosition / 2f);
-                title.setAlpha(1.0f - absPosition);
+                ImageView circle1 = page.findViewById(R.id.circle4);
+                circle1.setTranslationX(pageWidthTimesPosition / 4f);
+                circle1.setAlpha(1.0f - absPosition);
 
-                // Now the description. We also want this one to
-                // fade, but the animation should also slowly move
-                // down and out of the screen
-                ImageView description = page.findViewById(R.id.circle2);
-                description.setTranslationX(-pageWidthTimesPosition / 2f);
-                description.setAlpha(1.0f - absPosition);
+                LinearLayout ll2 = page.findViewById(R.id.ll1);
+                ll2.setTranslationX(pageWidthTimesPosition / 2f);
+                ll2.setAlpha(1.0f - absPosition);
 
-                // Now, we want the image to move to the right,
-                // i.e. in the opposite direction of the rest of the
-                // content while fading out
-                View computer = page.findViewById(R.id.circle3);
+                ImageView circle2 = page.findViewById(R.id.circle2);
+                circle2.setTranslationX(pageWidthTimesPosition / 1f);
+                circle2.setAlpha(1.0f - absPosition);
 
-                // We're attempting to create an effect for a View
-                // specific to one of the pages in our ViewPager.
-                // In other words, we need to check that we're on
-                // the correct page and that the View in question
-                // isn't null.
-//                if (pagePosition == 0 && computer != null) {
-//                    computer.setAlpha(1.0f - absPosition);
-//                    computer.setTranslationX(-pageWidthTimesPosition * 1.5f);
-//                }
+                ImageView circle6 = page.findViewById(R.id.circle6);
+                circle6.setTranslationX(pageWidthTimesPosition / 1.5f);
+                circle6.setAlpha(1.0f - absPosition);
             }
 
             // Finally, it can be useful to know the direction

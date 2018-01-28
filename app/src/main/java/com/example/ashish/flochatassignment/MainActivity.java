@@ -134,25 +134,12 @@ public class MainActivity extends AppCompatActivity {
 
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
-//            if (position == 1) {
-//                circleImage = findViewById(R.id.circle_image);
-//                Glide.with(MainActivity.this)
-//                        .asGif()
-//                        .load(R.raw.notes)
-//                        .into(circleImage);
-//            }
-
             switch (position){
                 case 0:
                     view.setTag(0);
                     break;
                 case 1:
                     view.setTag(1);
-                    circleImage = findViewById(R.id.circle_image);
-                Glide.with(MainActivity.this)
-                        .asGif()
-                        .load(R.raw.notes)
-                        .into(circleImage);
                     break;
                 case 2 :
                     view.setTag(2);

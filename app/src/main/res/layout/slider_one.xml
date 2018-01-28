@@ -3,43 +3,105 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <FrameLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_above="@id/content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        >
+
+
+        <ImageView
+            android:layout_height="80dp"
+            android:layout_width="80dp"
+            android:id="@+id/image3"
+            android:layout_marginTop="90dp"
+            android:src="@drawable/unnamed"
+            android:layout_marginLeft="50dp"/>
+
     <LinearLayout
         android:id="@+id/square"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
         android:padding="10dp"
-        android:layout_above="@id/content"
         android:background="@drawable/dotted_border">
 
     <View
         android:id="@+id/myRectangleView1"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorPrimary"/>
     <View
         android:id="@+id/myRectangleView2"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorAccent"/>
     <View
         android:id="@+id/myRectangleView3"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:background="@color/bg_screen2"/>
     <View
         android:id="@+id/myRectangleView4"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="50dp"
         android:background="@color/bg_screen4"/>
     </LinearLayout>
+        <ImageView
+            android:layout_height="40dp"
+            android:layout_width="40dp"
+            android:id="@+id/image1"
+            android:src="@drawable/camera"
+            android:layout_marginLeft="80dp"/>
 
+        <ImageView
+            android:layout_height="45dp"
+            android:layout_width="45dp"
+            android:id="@+id/image4"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/location"
+            android:layout_gravity="right"
+            android:layout_marginRight="80dp"/>
+        <ImageView
+            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:id="@+id/image2"
+            android:src="@drawable/music"
+            android:layout_gravity="right"
+            android:layout_marginRight="60dp"/>
 
+        <ImageView
+            android:layout_height="30dp"
+            android:layout_width="30dp"
+            android:src="@drawable/unnamed"
+            android:layout_marginTop="180dp"
+            android:layout_gravity="right"
+            android:id="@+id/image6"
+            android:layout_marginRight="65dp"/>
+
+        <ImageView
+            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:id="@+id/image5"
+            android:src="@drawable/musiclarge"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="60dp"/>
+        <ImageView
+            android:layout_height="35dp"
+            android:layout_width="35dp"
+            android:id="@+id/image7"
+            android:src="@drawable/graph"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="40dp"/>
+    </FrameLayout>
 
     <LinearLayout
         android:id="@+id/content"
@@ -48,7 +110,7 @@
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
         android:orientation="vertical"
-        android:layout_marginBottom="100dp">
+        android:layout_marginBottom="50dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
