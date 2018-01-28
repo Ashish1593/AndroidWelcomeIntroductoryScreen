@@ -13,4 +13,5 @@
 
         <string name="slide_3_title">Definitive</string>
         <string name="slide_3_desc">We surface the most important need to know use</string>
-    </resources>
+    <string name="lets_go">Lets Go !</string>
+</resources>

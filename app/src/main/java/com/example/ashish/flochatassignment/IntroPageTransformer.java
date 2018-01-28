@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
 import com.bumptech.glide.Glide;
 
 /**
@@ -17,9 +16,7 @@ public class IntroPageTransformer implements ViewPager.PageTransformer {
 
     @Override
     public void transformPage(View page, float position) {
-
         int pagePosition = (int) page.getTag();
-
         int pageWidth = page.getWidth();
         float pageWidthTimesPosition = pageWidth * position;
         float absPosition = Math.abs(position);
@@ -89,5 +86,4 @@ public class IntroPageTransformer implements ViewPager.PageTransformer {
             }
         }
     }
-
 }
