@@ -25,7 +25,6 @@ public class IntroPageTransformer implements ViewPager.PageTransformer {
         float absPosition = Math.abs(position);
 
         if (position <= -1.0f || position >= 1.0f) {
-
         } else if (position == 0.0f) {
             if (pagePosition == 1) {
                 ImageView circleImage = page.findViewById(R.id.circle_image);
@@ -68,8 +67,8 @@ public class IntroPageTransformer implements ViewPager.PageTransformer {
             }
 
             if (pagePosition == 1) {
-                FrameLayout circleImage = page.findViewById(R.id.circle);
-                circleImage.setRotation(-pageWidthTimesPosition / 7f);
+                FrameLayout circleLayout = page.findViewById(R.id.circle);
+                circleLayout.setRotation(-pageWidthTimesPosition / 7f);
             }
             if (pagePosition == 2) {
                 ImageView circle1 = page.findViewById(R.id.circle4);
