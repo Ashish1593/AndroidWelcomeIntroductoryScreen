@@ -15,12 +15,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout dotsLayout;
     private int[] layouts;
     private Button navigateToMain;
-    private ImageView circleImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,26 +50,23 @@ public class MainActivity extends AppCompatActivity {
         MyViewPagerAdapter myViewPagerAdapter = new MyViewPagerAdapter();
         viewPager.setAdapter(myViewPagerAdapter);
         viewPager.addOnPageChangeListener(viewPagerPageChangeListener);
-        viewPager.setPageTransformer(false,new IntroPageTransformer());
+        viewPager.setPageTransformer(false, new IntroPageTransformer());
     }
 
     private void addBottomDots(int currentPage) {
         TextView[] dots = new TextView[layouts.length];
-
-        int[] colorsActive = getResources().getIntArray(R.array.array_dot_active);
-        int[] colorsInactive = getResources().getIntArray(R.array.array_dot_inactive);
 
         dotsLayout.removeAllViews();
         for (int i = 0; i < dots.length; i++) {
             dots[i] = new TextView(this);
             dots[i].setText(Html.fromHtml("&#8226;"));
             dots[i].setTextSize(35);
-            dots[i].setTextColor(colorsInactive[currentPage]);
+//            dots[i].setTextColor(getResources().getColor(R.color.bg_screen1));
             dotsLayout.addView(dots[i]);
         }
 
         if (dots.length > 0)
-            dots[currentPage].setTextColor(colorsActive[currentPage]);
+            dots[currentPage].setTextColor(getResources().getColor(R.color.bg_screen1));
     }
 
     private int getItem(int i) {
@@ -134,19 +126,17 @@ public class MainActivity extends AppCompatActivity {
 
             View view = layoutInflater.inflate(layouts[position], container, false);
             container.addView(view);
-            switch (position){
+            switch (position) {
                 case 0:
                     view.setTag(0);
                     break;
                 case 1:
                     view.setTag(1);
                     break;
-                case 2 :
+                case 2:
                     view.setTag(2);
                     break;
             }
-
-
             return view;
         }
 

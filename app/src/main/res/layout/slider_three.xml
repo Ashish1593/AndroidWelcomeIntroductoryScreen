@@ -3,100 +3,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="50dp"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@id/content"
-        android:orientation="vertical">
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/circle"
-        android:id="@+id/circle1"
-        android:backgroundTint="@color/bg_screen3"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical">
+
+            <ImageView
+                android:id="@+id/circle1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/bg_screen3" />
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/circle1"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/circle2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="@color/bg_screen4" />
+
+                <ImageView
+                    android:id="@+id/circle3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="@color/bg_screen1"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/circle4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="100dp"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="@color/bg_screen2"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/circle5"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/circle"
+                    android:backgroundTint="@color/bg_screen3" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/circle6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/ll2"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circle"
+                android:backgroundTint="@color/bg_screen1" />
+        </RelativeLayout>
+    </FrameLayout>
+
     <LinearLayout
-        android:id="@+id/ll1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/circle1"
-        android:layout_centerHorizontal="true"
-        >
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/circle"
-        android:layout_below="@id/circle1"
-        android:id="@+id/circle2"
-        android:layout_marginRight="100dp"
-        android:layout_marginEnd="100dp"
-        android:backgroundTint="@color/bg_screen4"
-        />
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/circle"
-        android:id="@+id/circle3"
-        android:layout_below="@id/circle1"
-        android:layout_toRightOf="@id/circle2"
-        android:backgroundTint="@color/bg_screen1"
-
-        />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/ll2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/ll1"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/circle"
-            android:layout_below="@id/circle1"
-            android:id="@+id/circle4"
-            android:layout_marginRight="100dp"
-            android:layout_marginEnd="100dp"
-            android:backgroundTint="@color/bg_screen2"
-
-            />
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/circle"
-            android:id="@+id/circle5"
-            android:layout_below="@id/circle1"
-            android:layout_toRightOf="@id/circle2"
-            android:backgroundTint="@color/bg_screen3"
-
-            />
-    </LinearLayout>
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@drawable/circle"
-        android:id="@+id/circle6"
-        android:layout_below="@id/ll2"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/bg_screen1"
-
-        />
-    </RelativeLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
         android:id="@+id/content"
-        android:layout_marginBottom="50dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
